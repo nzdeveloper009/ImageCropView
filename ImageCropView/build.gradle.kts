@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -21,6 +22,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            consumerProguardFiles("proguard-rules.pro")
+
+            consumerProguardFiles("consumer-rules.pro")
         }
     }
     compileOptions {
@@ -29,6 +33,23 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from (components["release"])
+                groupId = "com.github.nzdeveloper009"
+                artifactId = "ImageCropView"
+                version = "1.0.0"
+            }
+        }
+
+        repositories {
+            mavenLocal()
+        }
     }
 }
 
