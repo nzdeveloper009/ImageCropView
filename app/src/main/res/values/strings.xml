@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ImageCropViewMaster</string>
+
+    <string name="title_crop_gallery">Crop gallery</string>
+    <string name="title_crop">Crop</string>
+
+    <string name="title_choose_image">Open</string>
+
+    <string name="msg_crop_failed">Crop failed: %s</string>
+
+    <string name="btn_new_crop">New crop</string>
+
+    <string name="transition_view_image" translatable="false">view_image</string>
+    <string name="mi_done">Done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="random_image">Random image</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="delete">Delete</string>
+
+</resources>
